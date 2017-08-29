@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.medved.weatherapp.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/earth2"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/dateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorCurrentWeatherText"
+            android:textSize="20sp"
+            android:textStyle="italic|bold"/>
+
+        <Button
+            android:id="@+id/locationBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="12dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/ic_location_searching_white"/>
+
+        <TextView
+            android:id="@+id/cityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@id/locationBtn"
+            android:textColor="@color/colorCurrentWeatherText"
+            android:textSize="32sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/cityTextView"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/colorCurrentWeatherText"
+            android:textSize="28sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tempTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/descriptionTextView"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/colorCurrentWeatherText"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ccc">
+
+        <EditText
+            android:id="@+id/locationEditText"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/search_bar_height"
+            android:hint="@string/hint_text"
+            android:inputType="textCapWords"
+            android:maxLines="1"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/search_bar_text"
+            android:textStyle="italic"/>
+
+        <ListView
+            android:id="@+id/weatherListView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.6"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+</LinearLayout>
+
